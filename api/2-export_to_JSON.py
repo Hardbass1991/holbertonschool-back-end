@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module that fetches data and exports it in csv format
+"""Module that fetches data about users and tasks from api,
+and exports it into a json file.
 """
 import json
 from sys import argv
