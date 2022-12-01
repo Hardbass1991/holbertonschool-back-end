@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""Module that fetches data from online api"""
+"""Module that fetches different pieces of data from online api"""
 import json
 import urllib.request
 from sys import argv
 
-"""First we get the name of the employee"""
+
+# First we get the name of the employee
 url = "https://jsonplaceholder.typicode.com/users/"
 webURL = urllib.request.urlopen(url)
 data = webURL.read()
@@ -12,7 +13,7 @@ JSON_object = json.loads(data.decode('utf-8'))
 
 employee_name = JSON_object[int(argv[1]) - 1]["name"]
 
-"""Then we fetch the tasks"""
+# Then we fetch the tasks
 url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(argv[1])
 webURL = urllib.request.urlopen(url)
 data = webURL.read()
