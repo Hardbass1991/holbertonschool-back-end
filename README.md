@@ -1,2 +1,1 @@
-dasdasdas
-# holbertonschool-back-end
+This repository contains exercises on backend development
