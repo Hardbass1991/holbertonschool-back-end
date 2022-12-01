@@ -11,14 +11,13 @@ webURL = urllib.request.urlopen(url)
 data = webURL.read()
 users = json.loads(data.decode('utf-8'))
 
-
-
 dct = {}
 for user in users:
     task_list = []
 
     url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
-    user["id"])
+        user["id"]
+    )
     webURL = urllib.request.urlopen(url)
     data = webURL.read()
     tasks = json.loads(data.decode('utf-8'))
@@ -28,7 +27,7 @@ for user in users:
         d_task["username"] = user["username"]
         d_task["task"] = task["title"]
         d_task["completed"] = task["completed"]
-    
+
         task_list.append(d_task)
 
     dct[user["id"]] = task_list
